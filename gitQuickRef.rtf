@@ -1,0 +1,180 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Light;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red83\green83\blue83;\red38\green38\blue38;\red184\green14\blue61;
+\red255\green255\blue255;\red252\green28\blue43;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl900\sa100\partightenfactor0
+
+\f0\fs40 \cf2 \expnd0\expndtw0\kerning0
+\ul \ulc2 \outl0\strokewidth0 \strokec2 Git Quick Reference\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\f1\fs26 \cf3 \ulnone \strokec3 Here is a brief\'a0list of the most important Git commands that you can use from the command line.\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Staging, Committing, and Pushing\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 The three most important Git commands are:\
+> git add -A\
+> git commit \'96m \'93commit message\'94\
+> git push\
+\'a0\
+The first command stages all of the changes to the files in your working directory to the staging area. The second command commits the changes. Finally, the third command pushes all of the changes from your local repository to your remote repository.\
+You can combine the first and second commands like this:\
+> git commit \'96a \'96m \'93commit message\'94\
+\'a0\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Retrieving Changes from the Server\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 If you want to get the latest changes made by other members of your team on the server then you need to execute the following command:\
+> git pull\
+This command fetches all of the changes and attempts to do a merge of the changes into the current branch.\
+\'a0\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Getting the Current Status\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 Execute the following command to see the status of all of the files in your Git repository:\
+> git status\
+For example, you will see a list of any files that have been staged but not committed. You will also see a list of all untracked files (that are not being ignored).\
+You can use the following command to see the commit history to your repository:\
+> git log\
+This command will show a list of commits including the commit messages.\
+You can view changes that you made to current files in the repository by executing a diff command like this:\
+> git diff\
+If you want to compare changes against the staged files then execute the diff command like this:\
+> git diff --staged\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Creating a New Git Repository\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 Execute the following command from inside the directory where you want to create the new Git repository:\
+> git init\
+\'a0\
+This command creates a hidden folder named .git.\'a0 You can copy this folder anywhere on your hard drive and it will remain a Git repository.\
+If you want to remove the Git repository then simply delete the hidden .git folder:\
+> rmdir .git /S\
+\'a0\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Working with Branches\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 Before performing any new work, you should always start by creating a new branch. The following two commands creates a new branch named Story2 and checks out the branch:\
+> git branch Story2\
+> git checkout Story2\
+You can combine these two commands like this:\
+> git checkout \'96b Story2\
+You can check to see what branch is currently the active branch by executing the following command:\
+> git branch\
+Finally, you can push a branch to a remote repository like this:\
+> git push origin Story2\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Stashing Changes\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 Before switching to a branch, you might want to temporarily \'93stash\'94 all of your staged but uncommitted changes. In other words, you might want to store any file modifications temporarily without permanently committing the changes:\
+> git stash\
+You can see a list of your stashed changes by executing the following command:\
+> git stash list\
+When you switch back to the branch, you can get your stashed changes back again by executing the following command:\
+> git stash pop\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Merging Branches\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 You can merge changes made to one branch into another branch by performing a Git merge. For example, imagine that you want to merge the changes that you made to the Story2 branch back into the master branch. In that case, first switch back to the master branch:\
+> git checkout master\
+Next, execute the merge command:\
+> git merge Story2\
+\'a0\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Handling Merge Conflicts\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 The following sequence of events will result in a merge conflict:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl300\partightenfactor0
+\ls1\ilvl0\cf3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 In the master branch, you create a file named HomePage.html which contains nothing.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 You create a new branch named Story34.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 In the Story34 branch, you modify the HomePage.html so it contains the text \'93Hello!\'94.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 In the master branch, you modify the HomePage.html so it contains the text \'93Welcome\'94.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5.	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 When you attempt to merge the Story34 branch back into master, you get a merge conflict.\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+\cf3 When you attempt to perform the merge, you\'92ll get the following error message:\
+\pard\pardeftab720\sl280\sa200\partightenfactor0
+
+\f2\fs24 \cf4 \cb5 \strokec4 Auto-merging HomePage.html
+\f1\fs26 \cf3 \cb1 \strokec3 \
+
+\f2\fs24 \cf4 \cb5 \strokec4 CONFLICT (content): Merge conflict in HomePage.html
+\f1\fs26 \cf3 \cb1 \strokec3 \
+
+\f2\fs24 \cf4 \cb5 \strokec4 Automatic merge failed; fix conflicts and then commit the result.
+\f1\fs26 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+\cf3 After the merge, the HomePage.html file will look like this:\
+\pard\pardeftab720\sl280\sa200\partightenfactor0
+
+\f2\fs24 \cf4 \cb5 \strokec4 <<<<<<< HEAD
+\f1\fs26 \cf3 \cb1 \strokec3 \
+
+\f2\fs24 \cf4 \cb5 \strokec4 Welcome
+\f1\fs26 \cf3 \cb1 \strokec3 \
+
+\f2\fs24 \cf4 \cb5 \strokec4 =======
+\f1\fs26 \cf3 \cb1 \strokec3 \
+
+\f2\fs24 \cf4 \cb5 \strokec4 Hello
+\f1\fs26 \cf3 \cb1 \strokec3 \
+
+\f2\fs24 \cf4 \cb5 \strokec4 >>>>>>> Story34
+\f1\fs26 \cf3 \cb1 \strokec3 \
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+\cf3 The HomePage.html contains combined content from the master branch (which is currently the HEAD) and the Story34 branch. You can modify the file by hand to resolve the merge conflict. After modifying the file, use the Git add command to indicate that the merge conflict is resolved like this:\
+> git add HomePage.html\
+If you prefer to resolve the merge conflicts with a tool, then you can open the KDiff tool like this:\
+> git mergetool\
+The KDiff tool provides you with a nice user interface to resolve each of the merge conflicts in the file. Again, after resolving the conflicts, use the git add command to indicate that the merge conflict has been resolved.\
+\'a0\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Discarding All Uncommitted Changes\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 If you make several changes to a branch, and you just want to start over by discarding all of your changes, then you can execute the following command:\
+> git reset \'96hard\
+The command above will revert any tracked files. If you added new files to the repository \'96 and you did not do a Git add -- then the new files won\'92t be removed.\
+You can revert an individual file by doing a checkout like this:\
+> git checkout HomePage.html\
+This command will remove any modifications made to the HomePage.html file.\
+\'a0\
+\pard\pardeftab720\sl700\sa100\partightenfactor0
+
+\fs40 \cf2 \ul \ulc2 \strokec2 Removing Files\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+
+\fs26 \cf3 \ulnone \strokec3 \'a0\
+Always add a .gitignore file to the root of your Git repository to prevent Git from tracking generated files such as .dll files. You can download a .gitignore file for Visual Studio from the following address:\
+\pard\pardeftab720\sl300\sa200\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore"}}{\fldrslt \cf6 \strokec6 https://raw.githubusercontent.com/github/gitignore/master/VisualStudio.gitignore}}\
+If you forget to add a .gitignore file and accidently start tracking files that you don\'92t want to track then you need to explicitly remove the files like this:\
+> git rm MyApp.dll\
+This command removes the MyApp.dll file from your Git repository. Changes to the file will no longer be tracked even if the file is generated by Visual Studio again in the future.\
+}
