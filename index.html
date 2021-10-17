@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="External.css"/>
-    <script src='ExternalJS.js'></script>
 
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css" />
+  <script src='script.js'></script>
+
+</head>
+
+<body>
+  <div class="container">
     <h1>Hello World</h1>
     <p>
       I need these things for the house. It is <strong>Necessary!</strong>
     </p>
     <ul>
-      <li><label><input id="Steak Ums" type="checkbox"/></label>Steak Ums</li>
-      <li><input id="Orange Juice" type ="checkbox"/>Orange Juice</li>
-      <li><input type="checkbox" id="Water"/>Water</li>
-    </ul>
+      <li><input id="Steak Ums" type="checkbox" /><label for="Steak Ums">Steak Ums</label></li>
 
-  </body>
+      <li class="juice"><input id="Orange Juice" type="checkbox" /><label for="Orange Juice">Orange Juice</label></li>
+      <li class="water"><input type="checkbox" id="Water" /><label for="Water">Water</label></li>
+    </ul>
+  </div>
+
+</body>
+
 </html>

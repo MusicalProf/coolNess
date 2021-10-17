@@ -1,0 +1,22 @@
+body {
+  background-color: lightgrey;
+  color: black;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}
+
+strong {
+  color: red;
+}
+
+li {
+  list-style: none;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
